@@ -173,7 +173,7 @@ body {
 }
 #introtext .head-brad {
     font-family: "futura_ltbook", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 2em;
+    font-size: 3em;
     line-height: 100%;
 }
 #introtext .date {
@@ -556,7 +556,7 @@ section h2 {
         font-size: 1.1em;
     }
     #introtext .head-brad {
-        font-size: 5em;
+        font-size: 7em;
     }
     #introtext .date {
 
