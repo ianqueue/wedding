@@ -313,11 +313,12 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #333333;
-  background-color: #ffffff;
+  font-family      : "Source Sans Pro", sans-serif;
+  font-weight      : 300;
+  font-size        : 14px;
+  line-height      : 1.428571429;
+  color            : #333;
+  background-color : #fff;
 }
 
 input,
@@ -336,7 +337,7 @@ a {
 
 a:hover,
 a:focus {
-  color: #2a6496;
+  color: #fff;
   text-decoration: underline;
 }
 
@@ -381,10 +382,10 @@ img {
 }
 
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 0;
-  border-top: 1px solid #eeeeee;
+  margin-top    : 80px;
+  margin-bottom : 80px;
+  border        : 0;
+  border-top    : 1px solid #eeeeee;
 }
 
 .sr-only {
@@ -480,22 +481,12 @@ cite {
   text-align: center;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  line-height: 1.1;
-  color: inherit;
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6 {
+  font-family : "Source Sans Pro", sans-serif;
+  font-weight : 400;
+  line-height : 1.1;
+  color       : inherit;
 }
 
 h1 small,
@@ -4130,8 +4121,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .nav > li > a:hover,
 .nav > li > a:focus {
-  text-decoration: none;
-  background-color: #eeeeee;
+  text-decoration: none !important;
+  background-color: #eeeeee !important;
 }
 
 .nav > li.disabled > a {
@@ -4640,9 +4631,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar-left {
     float: left !important;
+    float: left;
   }
   .navbar-right {
     float: right !important;
+    float: right;
   }
 }
 
@@ -7207,8 +7200,8 @@ td.visible-print {
   }
 }
 
-/*@import "../bower_components/font-awesome/less/font-awesome.less";
-@fa-font-path: "../fonts/font-awesome";*/
+
+
 
 /** embedded font double rendering issue fix -- https://css-tricks.com/forums/discussion/10449/weird-mobile-safari-font-face-problem-font-doubled-and-offset-to-the-left-/p1 **/
 
@@ -7220,10 +7213,7 @@ h5,
 h6 {
   /*reset for mobile browsers */
 
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: 400;
-  line-height: 1.1;
-  color: inherit;
+  font-weight: normal;
 }
 
 /* ==========================================================================
@@ -7235,14 +7225,12 @@ button,
 input,
 select,
 textarea {
-  font-size: 100% !important;
   color: #222;
 }
 
 body {
-  font-size: 100% !important;
-  -webkit-font-smoothing: antialiased;
-  line-height: 26px;
+  font-size: 1em;
+  line-height: 1.4;
 }
 
 ::-moz-selection {
@@ -7261,13 +7249,12 @@ a {
 }
 
 hr {
-  display: block;
-  height: 1px;
-  padding: 0;
-  margin: 80px 0;
-  border: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 -1px 0px rgba(0, 0, 0, 0.8);
+  display    : block;
+  height     : 1px;
+  padding    : 0;
+  border     : 0;
+  border-top : 1px solid rgba(255,255,255,0.4);
+  box-shadow : 0px -1px 0px rgba(0,0,0,0.8);
 }
 
 img {
@@ -7296,8 +7283,7 @@ textarea {
    ========================================================================== */
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 300;
+  font: 16px/26px Helvetica, Helvetica Neue, Arial;
 }
 
 .wrapper {
@@ -7319,13 +7305,12 @@ body {
 #gmap iframe {
   width: 93%;
   height: 200px;
-  border: 5px solid rgba(255, 255, 255, 0.9);
+  border: 5px solid rgba(255,255,255,0.9);
   -webkit-border-radius: 2px;
      -moz-border-radius: 2px;
+      -ms-border-radius: 2px;
+       -o-border-radius: 2px;
           border-radius: 2px;
-  -webkit-background-clip: padding-box;
-     -moz-background-clip: padding;
-          background-clip: padding-box;
 }
 
 #gmap small a,
@@ -7357,12 +7342,6 @@ body {
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000, endColorstr=#CC000000)";
 }
 
-.header-container a,
-.header-container a:focus,
-.header-container a:active {
-  color: #fff;
-}
-
 .title {
   color: black;
 }
@@ -7386,7 +7365,6 @@ body {
 #introtext .head-alex {
   font-family: "EdwardianScrAltITCTT", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 5em;
-  font-weight: normal;
   line-height: 100%;
 }
 
@@ -7398,15 +7376,14 @@ body {
 }
 
 #introtext .head-ian {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 3em;
-  font-weight: 300;
   line-height: 100%;
 }
 
 #introtext .date {
   margin-top: 10px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1em;
 }
 
@@ -7421,7 +7398,7 @@ nav {
 nav ul {
   padding: 0;
   margin: 0;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: normal;
 }
 
@@ -7454,8 +7431,8 @@ nav li a.selected {
 /** firefox remove outline **/
 
 nav ul li a:focus {
-  text-decoration: none;
   outline: none;
+  text-decoration: none;
 }
 
 nav ul li a::-moz-focus-inner {
@@ -7481,10 +7458,12 @@ nav ul li a::-moz-focus-inner {
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 300;
-  color: #fff;
-  text-align: center;
+  font-family            : 'Source Sans Pro', sans-serif;
+  font-weight            : 300;
+  color                  : #fff;
+  text-align             : center;
+  
+  -webkit-font-smoothing : antialiased;
 }
 
 #bg-image {
@@ -7548,41 +7527,16 @@ section h2 {
 }
 
 .column p.stipulations {
-  position: relative;
-  top: 16px;
-  font-size: 100%;
+  top : 40px;
+  position : relative;
+  font-size : 100%;
 }
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
-@media only screen and (max-width: 768px) {
-  #bg-image img {
-    left: -18%;
-  }
-}
 
-@media only screen and (max-width: 480px) {
-  #bg-image img {
-    left: -85%;
-  }
-}
-
-@media only screen and (max-device-width: 480px), only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
-  #bg-image img {
-    left: -100%;
-  }
-}
-
-@media screen and (device-aspect-ratio: 40/71) {
-  #bg-image img {
-    left: -120%;
-  }
-  nav a {
-    padding: 0;
-  }
-}
 
 @media only screen and (min-width: 480px) {
   {
@@ -7597,6 +7551,7 @@ section h2 {
        ======================== */
   
   }
+    
   body {
     background-position: 50% 20%;
   }
@@ -7626,7 +7581,7 @@ section h2 {
     font-size: 0.9em;
   }
   #introtext .head-ian {
-    font-size: 5em;
+    font-size: 6em;
   }
   #introtext .date {
     margin-top: 15px;
@@ -7692,6 +7647,34 @@ section h2 {
   }
 }
 
+
+@media only screen and (max-width: 768px) {
+  #bg-image img {
+    left : -18%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #bg-image img {
+    left : -85%;
+  }
+}
+
+@media only screen and (max-device-width: 480px), only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
+    #bg-image img {
+    left : -100%;
+  }
+}
+
+@media screen and (device-aspect-ratio: 40/71) {
+  #bg-image img {
+    left : -120%;
+  }
+  nav a {
+      padding : 0;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   {
     /* ====================
@@ -7721,7 +7704,7 @@ section h2 {
     font-size: 1em;
   }
   #introtext .head-ian {
-    font-size: 6em;
+    font-size: 4em;
   }
   #introtext .date {
     margin-top: 15px;
@@ -7808,6 +7791,20 @@ section h2 {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
+.ir {
+  overflow: hidden;
+  *text-indent: -9999px;
+  background-color: transparent;
+  border: 0;
+}
+
+.ir:before {
+  display: block;
+  width: 0;
+  height: 150%;
+  content: "";
+}
 
 .hidden {
   display: none !important;
@@ -7938,13 +7935,13 @@ section h2 {
 }
 
 .responsive-image.proposal {
-  margin: 60px auto;
+  margin: 60px auto 60px auto;
   text-align: center;
 }
 
 .responsive-image.proposal img {
-  width: 90%;
-  border: 5px solid rgba(255, 255, 255, 0.9);
+  width  : 90%;
+  border : 5px solid rgba(255,255,255,0.9);
   -webkit-border-radius: 2px;
      -moz-border-radius: 2px;
           border-radius: 2px;
@@ -7966,6 +7963,22 @@ div.bp .column p {
   line-height: 180%;
 }
 
+.hr-t {
+  width: 97%;
+  margin: 80px auto 0 auto;
+  border-top: #1e1e1e solid 1px;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+
+.hr-b {
+  width: 97%;
+  margin: 0 auto 80px auto;
+  border-bottom: #808080 solid 1px;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+
 a[href^=tel] {
   color: white;
   text-decoration: none;
@@ -7981,11 +7994,10 @@ a.email {
   margin-right: 10px;
   margin-bottom: 0;
   background-color: black;
-  border: 5px solid rgba(255, 255, 255, 0.9);
+  border: 5px solid rgba(255,255,255,0.9);
   -webkit-border-radius: 2px;
      -moz-border-radius: 2px;
+      -ms-border-radius: 2px;
+       -o-border-radius: 2px;
           border-radius: 2px;
-  -webkit-background-clip: padding-box;
-     -moz-background-clip: padding;
-          background-clip: padding-box;
 }

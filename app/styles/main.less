@@ -3,13 +3,16 @@
 @import "../bower_components/bootstrap/less/bootstrap.less";
 @icon-font-path: "../fonts/glyphicons/";
 
-@import "../bower_components/font-awesome/less/font-awesome.less";
-@fa-font-path: "../fonts/font-awesome";
+/*@import "../bower_components/font-awesome/less/font-awesome.less";
+@fa-font-path: "../fonts/font-awesome";*/
 
 
 /** embedded font double rendering issue fix -- https://css-tricks.com/forums/discussion/10449/weird-mobile-safari-font-face-problem-font-doubled-and-offset-to-the-left-/p1 **/
 h1, h2, h3, h4, h5, h6 { /*reset for mobile browsers */
-    font-weight: normal;
+    font-family : "Source Sans Pro", sans-serif;
+    font-weight : 400;
+    line-height : 1.1;
+    color       : inherit;
 }
 
 /* ==========================================================================
@@ -21,44 +24,47 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+    font-size : 100% !important;
+    color     : #222;
 }
 
 body {
-    font-size: 1em;
-    line-height: 1.4;
+    font-size              : 100% !important;
+    line-height            : 26px;
+    -webkit-font-smoothing : antialiased;
 }
 
 ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+    background  : #b3d4fc;
+    text-shadow : none;
 }
 
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+    background  : #b3d4fc;
+    text-shadow : none;
 }
 a {
-    color: #b1bf92;
-    text-decoration: none;
+    color           : #b1bf92;
+    text-decoration : none;
 }
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+    margin     : 80px 0;
+    display    : block;
+    height     : 1px;
+    padding    : 0;
+    border     : 0;
+    border-top : 1px solid rgba(255,255,255,0.4);
+    box-shadow : 0px -1px 0px rgba(0,0,0,0.8);
 }
 
 img {
-    vertical-align: middle;
+    vertical-align : middle;
 }
 
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+    border  : 0;
+    margin  : 0;
+    padding : 0;
 }
 
 textarea {
@@ -66,10 +72,10 @@ textarea {
 }
 
 .chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+    margin     : 0.2em 0;
+    background : #ccc;
+    color      : #000;
+    padding    : 0.2em 0;
 }
 
 
@@ -78,14 +84,15 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font-family : 'Source Sans Pro', sans-serif;
+    font-weight : 300;
 }
 
 .wrapper {
-    height: 100%;
-    position: relative;
-    width: 90%;
-    margin: 0 5%;
+    height   : 100%;
+    position : relative;
+    width    : 90%;
+    margin   : 0 5%;
 }
 
 
@@ -93,35 +100,30 @@ body {
    GOOGLE MAPS
    ========================================================================== */
 #gmap {
-    text-align: center;
-    margin: 20px auto 20px auto;
+    text-align : center;
+    margin     : 20px auto 20px auto;
 }
 
 #gmap iframe {
-    width: 93%;
-    height: 200px;
+    width  : 93%;
+    height : 200px;
+    border : 5px solid rgba(255,255,255,0.9);
 
-    border: 10px solid #090909;
-
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
+    .rounded(2px);
 }
 
 #gmap small a,
 #gmap small a:active,
 #gmap small a:visited {
-    color: #b1bf92;
-    text-decoration: none;
-    outline: none;
+    color           : #b1bf92;
+    text-decoration : none;
+    outline         : none;
 }
 
 #gmap small a:hover {
-    color: #b1bf92;
-    text-decoration: underline;
-    outline: none;
+    color           : #b1bf92;
+    text-decoration : underline;
+    outline         : none;
 }
 
 /* ===================
@@ -129,62 +131,60 @@ body {
    =================== */
 
 .header-container {
-    position:absolute;
-    bottom:20px;
-    width: 100%;
-    background: black;
-    z-index: 10;
-    /* Fallback for web browsers that doesn't support RGBa */
-    background: rgb(0, 0, 0);
-    /* RGBa with 0.9 opacity */
-    background: rgba(0, 0, 0, 0.5);
-    /* For IE 5.5 - 7*/
-    /*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000, endColorstr=#CC000000);*/
-    /* For IE 8*/
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000, endColorstr=#CC000000)";
+    position   : absolute;
+    bottom     : 20px;
+    width      : 100%;
+    background : black;
+    z-index    : 10;
+    background : rgb(0, 0, 0);
+    background : rgba(0, 0, 0, 0.7);
+    
+    -ms-filter : "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000, endColorstr=#CC000000)";
+
+    a, a:focus, a:active {
+        color : #fff;
+    }
 }
 
 .title {
-    color: black;
+    color : black;
 }
 #introtext {
-    display: block;
-    padding: 10px 0 10px 0;
-    margin-bottom: 300px;
-    background: black;
+    display       : block;
+    padding       : 10px 0 10px 0;
+    margin-bottom : 300px;
+    background    : black;
 
     .rounded(2px);
 
-    /* Fallback for web browsers that doesn't support RGBa */
-    background: rgb(0, 0, 0);
-    /* RGBa with 0.7 opacity */
-    background: rgba(0, 0, 0, 0.4);
-    /* For IE 5.5 - 7*/
-    /*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000, endColorstr=#B2000000);*/
-    /* For IE 8*/
+    background : rgb(0, 0, 0);
+    background : rgba(0, 0, 0, 0.4);
+    
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000, endColorstr=#B2000000)";
 }
 
 #introtext .head-alex {
-    font-family: "EdwardianScrAltITCTT", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 5em;
-    line-height: 100%;
+    font-family : "EdwardianScrAltITCTT", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight : normal;
+    font-size   : 5em;
+    line-height : 100%;
 }
 #introtext .amp {
-    position: relative;
-    top: 19px;
-    margin-left: -10px;
-    font-size: 0.7em;
+    position    : relative;
+    top         : 19px;
+    margin-left : -10px;
+    font-size   : 0.7em;
 }
 #introtext .head-ian {
-    font-family: "futura_ltbook", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 3em;
-    line-height: 100%;
+    font-family : "Source Sans Pro", sans-serif;
+    font-weight : 300;
+    font-size   : 3em;
+    line-height : 100%;
 }
 #introtext .date {
-    margin-top: 10px;
-    font-family: "futura_ltbook", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 1em;
+    margin-top  : 10px;
+    font-family : "Source Sans Pro", sans-serif;
+    font-size   : 1em;
 }
 
 /* ==============
@@ -192,44 +192,47 @@ body {
    ============== */
 
 nav {
-    z-index: 42;
+    z-index : 42;
 }
 
 nav ul {
-    font-family:"futura_ltbook",Arial,sans-serif;
-    font-weight: normal;
-    margin: 0;
-    padding: 0;
+    font-family : "Source Sans Pro", sans-serif;
+    font-weight : normal;
+    margin      : 0;
+    padding     : 0;
 }
 
 nav a {
-    display: block;
-    margin-bottom: 10px;
-    padding: 5px 0;
-    text-align: center;
-    text-decoration: none;
-    /*font-weight: bold;*/
-    color: #fff;
-    background: transparent;
-    white-space: nowrap;
-    outline: none;
+    display         : block;
+    margin-bottom   : 10px;
+    padding         : 5px 0;
+    text-align      : center;
+    text-decoration : none;
+    color           : #fff;
+    background      : transparent;
+    white-space     : nowrap;
+    outline         : none;
 }
 
 nav li a:hover {
-    color: #fff;
-    background: #b1bf92;
-    text-decoration: none;
-    outline: none;
+    color           : #fff;
+    background      : #b1bf92;
+    text-decoration : none;
+    outline         : none;
 }
 nav li a.selected {
-    color: #fff;
-    background: #b1bf92;
-    text-decoration: none;
-    outline: none;
+    color           : #fff;
+    background      : #b1bf92;
+    text-decoration : none;
+    outline         : none;
 }
 
 /** firefox remove outline **/
-nav ul li a:focus {outline:none;}
+nav ul li a:focus {
+    outline         : none;
+    text-decoration : none;
+}
+
 nav ul li a::-moz-focus-inner {border:0;}
 
 
@@ -239,18 +242,19 @@ nav ul li a::-moz-focus-inner {border:0;}
    ============== */
 
 .main {
-    padding: 5% 0;
+    padding : 5% 0;
 }
 .main header {
-    float: left;
-    width: 80%;
+    float : left;
+    width : 80%;
 }
-* { margin: 0; padding: 0; }
+* { margin : 0; padding: 0; }
 
 body {
-	font-family : "futura_ltbook", "HelveticaNeueLTStdRegular","HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	color       : #fff;
-	text-align  : center;
+    font-family : 'Source Sans Pro', sans-serif;
+    font-weight : 300;
+    color       : #fff;
+    text-align  : center;
 }
 
 #bg-image {
@@ -276,51 +280,82 @@ body {
 }
 
 section {
-    text-align: left;
-    padding: 25px;
-    height: 100%;
-    margin-top: 200px;
-    color: white;
+    text-align : left;
+    padding    : 25px;
+    height     : 100%;
+    margin-top : 200px;
+    color      : white;
 
     .rounded(2px);
 
-    /* Fallback for web browsers that doesn't support RGBa */
     background: rgb(0, 0, 0);
-    /* RGBa with 0.7 opacity */
-    background: rgba(0, 0, 0, 0.5);
-    /* For IE 5.5 - 7*/
-    /*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000, endColorstr=#B2000000);*/
-    /* For IE 8*/
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000, endColorstr=#B2000000)";
+    background : rgba(0, 0, 0, 0.7);
+
+    -ms-filter : "progid:DXImageTransform.Microsoft.gradient(startColorstr=#B2000000, endColorstr=#B2000000)";
 }
 
 section h1 {
-
-    font-family: "EdwardianScrAltITCTT", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 2.6em;
-
+  font-family : "EdwardianScrAltITCTT", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size   : 2.6em;
 }
 section h2 {
-    font-size: 1.1em;
-    line-height: 120%;
-    padding: 0 0px;
+    font-size   : 1.1em;
+    line-height : 120%;
+    padding     : 0 0px;
 }
 
 .column {
-    float: none;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-.column p {
-    font-size: 1em;
-    line-height: 145%;
-    padding: 0;
+    margin  : 0;
+    padding : 0;
+    float   : none;
+    width   : 100%;
+    
+    p {
+        font-size   : 1em;
+        line-height : 145%;
+        padding     : 0;
+        
+        &.stipulations {
+          top       : 16px;
+          position  : relative;
+          font-size : 100%;
+        }
+    }
 }
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
+
+@media only screen and (max-width: 768px) {
+  #bg-image img {
+    left : -18%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #bg-image img {
+    left : -85%;
+  }
+}
+
+@media only screen and (max-device-width: 480px), 
+       only screen and (min-device-width: 560px) and (max-device-width: 1136px) 
+                                                 and (-webkit-min-device-pixel-ratio: 2) {
+    #bg-image img {
+    left : -100%;
+  }
+}
+
+@media screen and (device-aspect-ratio: 40/71) {
+  #bg-image img {
+    left : -120%;
+  }
+  nav a {
+      padding : 0;
+  }
+}
+
 
 @media only screen and (min-width: 480px) {
 
@@ -329,7 +364,7 @@ section h2 {
    ==================== */
 
     body {
-        background-position: 50% 20%;
+        background-position : 50% 20%;
     }
 
     /** get the transparent bar on the bottom **/
@@ -350,86 +385,86 @@ section h2 {
     }
 
     #introtext {
-        padding: 30px 0;
+        padding : 30px 0;
     }
 
     #introtext .head-alex {
-        font-size: 7em;
+        font-size : 7em;
     }
     #introtext .amp {
-        position: relative;
-        top: 29px;
-        font-size: 0.9em;
-        margin-left: -20px;
+        position    : relative;
+        top         : 29px;
+        font-size   : 0.9em;
+        margin-left : -20px;
     }
     #introtext .head-ian {
-        font-size: 3em;
+        font-size : 5em;
     }
     #introtext .date {
-        font-size: 1.1em;
-        margin-top: 15px;
-        margin-bottom: 20px;
+        font-size     : 1.1em;
+        margin-top    : 15px;
+        margin-bottom : 20px;
     }
     nav {
-        display: block;
+        display : block;
     }
 
     nav ul {
-        text-align: center;
-        margin: auto;
-        padding: 0;
-        text-align: center;
+        text-align : center;
+        margin     : auto;
+        padding    : 0;
+        text-align : center;
     }
     nav ul li {
-        display: inline;
-        padding: 0;
-        margin: 0;
+        display : inline;
+        padding : 0;
+        margin  : 0;
     }
 
     nav a {
-        padding: 15px 1%;
-        margin-bottom: 0;
-        display:inline-block;
-        font-size: 60%;
-        white-space: nowrap;
+        padding       : 15px 1%;
+        margin-bottom : 0;
+        display       :inline-block;
+        font-size     : 60%;
+        white-space   : nowrap;
 
-        -moz-font-smoothing: antialiased;
-        -o-font-smoothing: antialiased;
-        -ms-font-smoothing: antialiased;
-        -webkit-font-smoothing: antialiased;
-        font-smoothing: antialiased;
-
-        -webkit-transition: all .3s ease;
-        -moz-transition: all .3s ease;
-        -o-transition: all .3s ease;
-        -ms-transition: all .3s ease;
-        transition: all .3s ease;
+        -moz-font-smoothing    : antialiased;
+        -o-font-smoothing      : antialiased;
+        -ms-font-smoothing     : antialiased;
+        -webkit-font-smoothing : antialiased;
+        font-smoothing         : antialiased;
+        
+        -webkit-transition     : all .3s ease;
+        -moz-transition        : all .3s ease;
+        -o-transition          : all .3s ease;
+        -ms-transition         : all .3s ease;
+        transition             : all .3s ease;
     }
 
     .main header {
-        margin-top: 10%;
-        float: left;
-        width: 40%;
-        min-width: 320px;
+        margin-top : 10%;
+        float      : left;
+        width      : 40%;
+        min-width  : 320px;
     }
 
     section {
-        padding: 40px 40px 70px 40px;
+        padding : 40px 40px 70px 40px;
     }
     section h1 {
-        font-size: 3.1em;
+        font-size : 3.1em;
     }
     section h2 {
-        font-size: 1.7em;
+        font-size : 1.7em;
     }
 
 
     .column p {
-        font-size: 1.1em;
+        font-size : 1.1em;
     }
 
     #gmap iframe {
-        height: 400px;
+        height : 400px;
     }
 
 
@@ -439,11 +474,11 @@ section h2 {
    ======================== */
 
     nav ul li {
-        display: inline;
+        display : inline;
     }
 
     .oldie nav a {
-        margin: 0 0.7%;
+        margin : 0 0.7%;
     }
 }
 
@@ -454,10 +489,10 @@ section h2 {
    	==================== */
 
     section h1 {
-        font-size: 4.9em;
+        font-size : 4.9em;
     }
     section h2 {
-        font-size: 2.0em;
+        font-size : 2.0em;
     }
 
 	/* ============
@@ -465,19 +500,19 @@ section h2 {
    	============ */
 
     #introtext .head-alex {
-        font-size: 9em;
+        font-size : 9em;
    	}
     #introtext .amp {
-        top: 0;
-        font-size: 1em;
+        top       : 0;
+        font-size : 1em;
     }
     #introtext .head-ian {
-        font-size: 4em;
+        font-size : 6em;
     }
     #introtext .date {
-        font-size: 2em;
-        margin-top: 15px;
-        margin-bottom: 20px;
+        font-size     : 2em;
+        margin-top    : 15px;
+        margin-bottom : 20px;
     }
 
 /* ============
@@ -485,40 +520,41 @@ section h2 {
    ============ */
 
     .main header {
-        margin-top: 10%;
-        margin-bottom: 30%;
-        float: left;
-        width: 100%;
+        margin-top    : 10%;
+        margin-bottom : 30%;
+        float         : left;
+        width         : 100%;
     }
 
     nav a {
-        padding: 15px 2%;
-        font-size: 90%;
+        padding   : 15px 2%;
+        font-size : 90%;
     }
 }
 @media only screen and (min-width: 900px) {
 
     section h1,
-    section h2 {
-        padding: 0 20px;
+    section h2,
+    section h4 {
+        padding : 0 20px;
     }
     section h1 {
-        font-size: 5.9em;
+        font-size : 5.9em;
     }
 
     .column.full {
-        clear: both;
-        float: none;
-        width: 100%;
+        clear : both;
+        float : none;
+        width : 100%;
     }
     .column {
-        float: left;
-        width: 50%;
+        float : left;
+        width : 50%;
     }
     .column p {
-        font-size: 1.4em;
-        line-height: 145%;
-        padding: 0 20px;
+        font-size   : 1.4em;
+        line-height : 145%;
+        padding     : 0 20px;
     }  
 
 }
@@ -531,37 +567,36 @@ section h2 {
    =============== */
 
     nav a {
-        padding: 15px 3%;
-        font-size: 120%;
+        padding   : 15px 3%;
+        font-size : 120%;
     }
 
     .wrapper {
-        width: 1026px; /* 1140px - 10% for margins */
-        margin: 0 auto;
+        width  : 1026px; /* 1140px - 10% for margins */
+        margin : 0 auto;
     }
 
     #introtext .head-alex {
-        font-size: 11em;
+        font-size : 11em;
     }
     #introtext .amp {
-        top: 0;
-        font-size: 1.1em;
+        top       : 0;
+        font-size : 1.1em;
     }
     #introtext .head-ian {
-        font-size: 7em;
+        font-size : 7em;
     }
     #introtext .date {
-
-        font-size: 2.5em;
-        margin-top: 15px;
-        margin-bottom: 20px;
+        font-size     : 2.5em;
+        margin-top    : 15px;
+        margin-bottom : 20px;
     }
 
     .main header {
-        margin-top: 4%;
-        margin-bottom: 30%;
-        float: left;
-        width: 100%;
+        margin-top    : 4%;
+        margin-bottom : 30%;
+        float         : left;
+        width         : 100%;
     }
 
   
@@ -570,63 +605,48 @@ section h2 {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-
-.ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    *text-indent: -9999px;
-}
-
-.ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
-}
-
 .hidden {
-    display: none !important;
-    visibility: hidden;
+    display    : none !important;
+    visibility : hidden;
 }
 
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+    border   : 0;
+    clip     : rect(0 0 0 0);
+    height   : 1px;
+    margin   : -1px;
+    overflow : hidden;
+    padding  : 0;
+    position : absolute;
+    width    : 1px;
 }
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
+    clip     : auto;
+    height   : auto;
+    margin   : 0;
+    overflow : visible;
+    position : static;
+    width    : auto;
 }
 
 .invisible {
-    visibility: hidden;
+    visibility : hidden;
 }
 
 .clearfix:before,
 .clearfix:after {
-    content: " ";
-    display: table;
+    content : " ";
+    display : table;
 }
 
 .clearfix:after {
-    clear: both;
+    clear : both;
 }
 
 .clearfix {
-    *zoom: 1;
+    *zoom : 1;
 }
 
 /* ==========================================================================
@@ -635,23 +655,23 @@ section h2 {
 
 @media print {
     * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
+        background  : transparent !important;
+        color       : #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow  : none !important;
+        text-shadow : none !important;
     }
 
     a,
     a:visited {
-        text-decoration: underline;
+        text-decoration : underline;
     }
 
     a[href]:after {
-        content: " (" attr(href) ")";
+        content : " (" attr(href) ")";
     }
 
     abbr[title]:after {
-        content: " (" attr(title) ")";
+        content : " (" attr(title) ")";
     }
 
     /*
@@ -661,42 +681,42 @@ section h2 {
     .ir a:after,
     a[href^="javascript:"]:after,
     a[href^="#"]:after {
-        content: "";
+        content : "";
     }
 
     pre,
     blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
+        border            : 1px solid #999;
+        page-break-inside : avoid;
     }
 
     thead {
-        display: table-header-group; /* h5bp.com/t */
+        display : table-header-group; /* h5bp.com/t */
     }
 
     tr,
     img {
-        page-break-inside: avoid;
+        page-break-inside : avoid;
     }
 
     img {
-        max-width: 100% !important;
+        max-width : 100% !important;
     }
 
     @page {
-        margin: 0.5cm;
+        margin : 0.5cm;
     }
 
     p,
     h2,
     h3 {
-        orphans: 3;
-        widows: 3;
+        orphans : 3;
+        widows  : 3;
     }
 
     h2,
     h3 {
-        page-break-after: avoid;
+        page-break-after : avoid;
     }
 }
 
@@ -705,72 +725,6 @@ section h2 {
 /* =============================================================================
    FONTS
    ========================================================================== */
-
-@font-face {
-    font-family: 'futura_ltbold';
-    src: url('../fonts/futuralt-bold-webfont.eot');
-    src: url('../fonts/futuralt-bold-webfont.eot?#iefix') format('embedded-opentype'),  /* IE6-IE8 */
-         url('../fonts/futuralt-bold-webfont.woff') format('woff'),  /* Modern Browsers */
-         url('../fonts/futuralt-bold-webfont.ttf') format('truetype'),  /* Safari, Android, iOS */
-         url('../fonts/futuralt-bold-webfont.svg#futura_ltbold') format('svg');  /* Legacy iOS */
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'futura_ltbook';
-    src: url('../fonts/futuralt-book-webfont.eot');
-    src: url('../fonts/futuralt-book-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/futuralt-book-webfont.woff') format('woff'),
-         url('../fonts/futuralt-book-webfont.ttf') format('truetype'),
-         url('../fonts/futuralt-book-webfont.svg#futura_ltbook') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'futura_ltregular';
-    src: url('../fonts/futuralt-webfont.eot');
-    src: url('../fonts/futuralt-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/futuralt-webfont.woff') format('woff'),
-         url('../fonts/futuralt-webfont.ttf') format('truetype'),
-         url('../fonts/futuralt-webfont.svg#futura_ltregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'alex_brushregular';
-    src: url('../fonts/alexbrush-regular-otf-webfont.eot');
-    src: url('../fonts/alexbrush-regular-otf-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/alexbrush-regular-otf-webfont.woff') format('woff'),
-         url('../fonts/alexbrush-regular-otf-webfont.ttf') format('truetype'),
-         url('../fonts/alexbrush-regular-otf-webfont.svg#alex_brushregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'great_vibesregular';
-    src: url('../fonts/greatvibes-regular-webfont.eot');
-    src: url('../fonts/greatvibes-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/greatvibes-regular-webfont.woff') format('woff'),
-         url('../fonts/greatvibes-regular-webfont.ttf') format('truetype'),
-         url('../fonts/greatvibes-regular-webfont.svg#great_vibesregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'scriptina_proregular';
-    src: url('../fonts/scriptina_pro-webfont.eot');
-    src: url('../fonts/scriptina_pro-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/scriptina_pro-webfont.woff') format('woff'),
-         url('../fonts/scriptina_pro-webfont.ttf') format('truetype'),
-         url('../fonts/scriptina_pro-webfont.svg#scriptina_proregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 
 @font-face {
         font-family: 'EdwardianScrAltITCTT';
@@ -795,71 +749,44 @@ section h2 {
 }
 
 .responsive-image.proposal {
-    text-align: center;
-    margin: 60px auto 60px auto;
+    text-align : center;
+    margin     : 60px auto;
 }
 .responsive-image.proposal img {
-    border: 10px solid #090909;
+    width  : 90%;
+    border : 5px solid rgba(255,255,255,0.9);
 
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
+    .rounded(2px);
 }
 
 img.thevenue  {
-
-    text-align: center;
-    margin-bottom: 50px;
+    text-align    : center;
+    margin-bottom : 50px;
 }
 
 div.bp h2 {
     margin: 0;
 }
 div.bp .column p {
-    line-height: 180%;
+    line-height : 180%;
 }
 
-.hr-t {
-    margin: 80px auto 0 auto;
-    width: 97%;
-    border-top:#1e1e1e solid 1px;
-    opacity:0.4;
-    filter:alpha(opacity=40); /* For IE8 and earlier */
-}
-
-.hr-b {
-    margin: 0 auto 80px auto;
-    width: 97%;
-    border-bottom:#808080 solid 1px;
-    opacity:0.4;
-    filter:alpha(opacity=40); /* For IE8 and earlier */
-}
 a[href^=tel] {
-    color: white;
-    text-decoration: none;
-    outline: none;
+    color           : white;
+    text-decoration : none;
+    outline         : none;
 }
 a.email {
-    color: #b1bf92;
+    color : #b1bf92;
 }
 
 .thumb {
+    background-color : black;
+    margin-right     : 10px;
+    margin-bottom    : 0;
+    float            : left;
+    border           : 5px solid rgba(255,255,255,0.9);
 
-    height: 80px;
-    width: 80px;
-    background-color: black;
-    margin-right: 10px;
-    margin-bottom: 0;
-    float: left;
-
-    border: 4px solid #090909;
-
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
+    .rounded(2px);
 }
 
